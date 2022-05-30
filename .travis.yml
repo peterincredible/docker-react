@@ -1,0 +1,7 @@
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -t peterincredible/docker-react-test -f Dockerfile.div .
+script:
+  - docker run peterincredible/docker-react-test npm run test -- -- coverage
